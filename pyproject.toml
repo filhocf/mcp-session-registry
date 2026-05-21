@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-session-registry"
+version = "0.1.0"
+description = "MCP server for multi-session awareness and coordination"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [
+    { name = "Claudio Ferreira Filho", email = "filhocf@gmail.com" },
+]
+keywords = ["mcp", "session", "coordination", "multi-agent", "awareness"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "mcp>=1.9.0",
+    "uvicorn>=0.34.0",
+]
+
+[project.scripts]
+mcp-session-registry = "mcp_session_registry.server:main"
+
+[project.urls]
+Homepage = "https://github.com/filhocf/mcp-session-registry"
+Repository = "https://github.com/filhocf/mcp-session-registry"
+Issues = "https://github.com/filhocf/mcp-session-registry/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_session_registry"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
