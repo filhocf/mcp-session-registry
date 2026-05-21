@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from mcp.server.fastmcp import FastMCP
 
 from .db import SessionDB
-from .models import Claim, ClaimInput, ConflictCheckInput, RegisterInput, Session
+from .models import Claim, Session
 
 logger = logging.getLogger(__name__)
 

@@ -6,7 +6,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 
-from .models import Session, Claim, Conflict, SessionStatus
+from .models import Session, Claim, Conflict
 
 logger = logging.getLogger(__name__)
 

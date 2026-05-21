@@ -1,6 +1,5 @@
 """Tests for the database layer."""
 
-import time
 from datetime import datetime, timezone, timedelta
 
 from mcp_session_registry.db import SessionDB, HEARTBEAT_TIMEOUT_SECONDS
