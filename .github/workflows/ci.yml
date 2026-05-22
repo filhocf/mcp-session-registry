@@ -19,5 +19,16 @@ jobs:
         run: uv venv && uv pip install -e . && uv pip install pytest ruff
       - name: Lint
         run: uv run ruff check src/ tests/
-      - name: Test
-        run: uv run pytest tests/ -v
+      - name: Test with coverage
+        run: |
+          uv pip install pytest-cov
+          uv run pytest tests/ -v --cov=src/mcp_session_registry --cov-report=term --cov-fail-under=70
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Security check (bandit)
+        run: |
+          pip install bandit
+          bandit -r src/ -ll -ii
