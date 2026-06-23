@@ -4,6 +4,7 @@ import asyncio
 import logging
 import os
 import socket
+import time as _time
 from datetime import datetime, timezone
 
 from mcp.server.fastmcp import FastMCP
@@ -15,7 +16,6 @@ logger = logging.getLogger(__name__)
 
 mcp = FastMCP("session-registry")
 
-import time as _time
 _start_time = _time.time()
 
 @mcp.custom_route("/health", methods=["GET"])
