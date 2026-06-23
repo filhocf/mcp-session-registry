@@ -15,6 +15,14 @@ logger = logging.getLogger(__name__)
 
 mcp = FastMCP("session-registry")
 
+import time as _time
+_start_time = _time.time()
+
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request):
+    from starlette.responses import JSONResponse
+    return JSONResponse({"status": "healthy", "version": "0.2.0", "uptime_seconds": int(_time.time() - _start_time)})
+
 db: SessionDB | None = None
 
 
