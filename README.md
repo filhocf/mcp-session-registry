@@ -27,8 +27,8 @@ When you run multiple AI CLI sessions (Kiro, Claude Code, Gemini CLI) on the sam
 # Run directly
 uvx mcp-session-registry
 
-# Or install
-pip install mcp-session-registry
+# Or install as a tool
+uv tool install mcp-session-registry
 
 # Configure port (default: 8000)
 MSR_PORT=3203 mcp-session-registry
