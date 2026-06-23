@@ -30,9 +30,9 @@ dependencies = [
 mcp-session-registry = "mcp_session_registry.server:main"
 
 [project.urls]
-Homepage = "https://github.com/filhocf/mcp-session-registry"
-Repository = "https://github.com/filhocf/mcp-session-registry"
-Issues = "https://github.com/filhocf/mcp-session-registry/issues"
+Homepage = 'https://github.com/filhocf/mcp-session-registry'
+Repository = 'https://github.com/filhocf/mcp-session-registry'
+Changelog = 'https://github.com/filhocf/mcp-session-registry/blob/main/CHANGELOG.md'
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mcp_session_registry"]
